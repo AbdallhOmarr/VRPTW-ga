@@ -4,7 +4,8 @@ from nodes import Deport, Customer, CustomerDistanceTable
 from csv_reader import csv_read
 import ga_params
 
-
+import time
+start_time = time.time()
 class Chromosome(BaseChromosome):
     @staticmethod
     def get_distance(source: int, dest: int) -> float:
@@ -37,4 +38,17 @@ customers_distance_table = CustomerDistanceTable(customers)
 ga_pop = population.Population(chromosome_width=len(customers), run_file_name=run_file_name, **ga_params.population)
 # print(str(ga_pop))
 best_chrome = ga_pop.evolve()
-print(best_chrome)
+print("--------")
+print(f"total distance:{best_chrome.total_travel_dist}")
+print("--------")
+print("Routes:")
+for route in best_chrome.vehicles_routes:
+    print(route)
+print("--------")
+
+endtime = time.time()
+
+
+total_time = endtime-start_time
+
+print(f"total time: {round(total_time)}")

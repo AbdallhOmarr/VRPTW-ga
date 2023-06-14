@@ -6,7 +6,7 @@ print_benchmarks = True
 draw_plot = False
 export_spreadsheet = True
 
-MAX_GEN = 60000
+MAX_GEN = 6000
 
 vehicle_cost_per_dist = 1.0
 vehicle_speed_avg = 1.0
@@ -34,7 +34,7 @@ population = {
     'selection_pressure': 2,  # tournament size (k)
     'selection_repeat': False,
     'parent_selection_ratio': 0.8,
-    'mutation_ratio': 0.1,
+    'mutation_ratio': 0.2,
     'elitism_count': 5,
     # plot
     'plot_x_div': 100,
